@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+<body>
+    <div id="content"></div>
+
+    <script src="/script/libs/jquery.js"></script>
+    <script src="/script/libs/underscore.js"></script>
+    <script src="/script/libs/backbone.js"></script>
+    <script src="/script/libs/backbone.epoxy.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/script/globals.js"></script>
+    <script src="/script/models.js"></script>
+    <script src="/script/views.js"></script>
+    <script src="/script/routers.js"></script>
+    <script>
+        (function($){
+            var app = Global.app;
+            app.Router = new Router();
+            Backbone.history.start();
+
+            $(document).on('click', 'a:not([data-bypass])', function(event) {
+                var href = $(this).attr('href');
+                var protocol = this.protocol + '//';
+
+                // Ensure roter navigation
+                if (href && href.slice(0, protocol.length) !== protocol && href.indexOf('javascript:') !== 0) {
+                    // Prevent page refresh
+                    event.preventDefault();
+
+                    // Navigate
+                    Backbone.history.navigate(href, true);
+                }
+            });
+        }(jQuery));
+    </script>
+</body>
+</html>

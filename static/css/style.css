@@ -1,0 +1,18 @@
+body {
+  background-color: #fff;
+}
+#content {
+  margin: 20px;
+}
+#content .dropdown-menu {
+  max-height: 400px;
+  overflow: auto;
+}
+#content .dropdown-menu img {
+  max-height: 12px;
+  max-width: 12px;
+}
+#content .dropdown-menu span {
+  margin: 10px 0;
+  font-size: 8pt;
+}

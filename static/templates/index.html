@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><span id="dropdownTitle">Switch Background</span></button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <% _.each(textures, function(texture) { %>
+            <li>
+                <a href="#" class="texture">
+                    <img src="<%- texture.texturePath %>">
+                    <span><%- texture.textureName %></span>
+                </a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
